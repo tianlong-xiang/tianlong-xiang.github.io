@@ -1,0 +1,29 @@
+h1 {
+    padding: 15px 0px;
+}
+
+h2{
+    color: #272822;
+    background-color: #FEDC5E;
+    border-color: #272822;
+    border: 1.5px solid;
+    border-radius: 3px 3px 0px 0px;
+
+    /* right-align */
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+h3,h4,h5,h6 {
+    color: #272822;
+    background-color: #8FD1E1;
+    border-color: #272822;
+    border: 1.5px solid;
+    border-radius: 3px 3px 0px 0px;
+
+    /* right-align */
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+}

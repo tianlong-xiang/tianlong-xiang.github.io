@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Redhat 和 Centos 生命周期 - 假装不困</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="向天龙" /><meta name="description" content="前言 线上生产环境操作系统，目前国内的环境来说，redhat和centos为主流选择。前两年经历了redhat6的退役，特此记录两个系统生命周" /><meta name="keywords" content="向天龙, 金融IT, 港股交易" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.101.0 with theme even" />
+
+
+<link rel="canonical" href="https://tianlong-xiang.github.io/post/2020/07-redhat-and-centos-life-cycle/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.9565d9fbd315eac78f27813f63aa3b0da6f4c9fa2e387dffc57b95f19672b1c2.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.1.20/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/copy-code-button.css">
+<link rel="stylesheet" href="/css/even.css">
+
+
+<meta property="og:title" content="Redhat 和 Centos 生命周期" />
+<meta property="og:description" content="前言 线上生产环境操作系统，目前国内的环境来说，redhat和centos为主流选择。前两年经历了redhat6的退役，特此记录两个系统生命周" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tianlong-xiang.github.io/post/2020/07-redhat-and-centos-life-cycle/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2020-07-21T20:02:35+08:00" />
+<meta property="article:modified_time" content="2022-02-10T08:39:23+08:00" />
+
+<meta itemprop="name" content="Redhat 和 Centos 生命周期">
+<meta itemprop="description" content="前言 线上生产环境操作系统，目前国内的环境来说，redhat和centos为主流选择。前两年经历了redhat6的退役，特此记录两个系统生命周"><meta itemprop="datePublished" content="2020-07-21T20:02:35+08:00" />
+<meta itemprop="dateModified" content="2022-02-10T08:39:23+08:00" />
+<meta itemprop="wordCount" content="172">
+<meta itemprop="keywords" content="Linux,操作系统," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Redhat 和 Centos 生命周期"/>
+<meta name="twitter:description" content="前言 线上生产环境操作系统，目前国内的环境来说，redhat和centos为主流选择。前两年经历了redhat6的退役，特此记录两个系统生命周"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">假装不困</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签云</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">目录</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于我</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">假装不困</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签云</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">目录</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于我</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Redhat 和 Centos 生命周期</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-07-21 </span>
+        <div class="post-category">
+            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"> 计算机 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#前言">前言</a></li>
+        <li><a href="#正文">正文</a></li>
+        <li><a href="#追更">追更</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="前言">前言</h2>
+<p>线上生产环境操作系统，目前国内的环境来说，redhat和centos为主流选择。前两年经历了redhat6的退役，特此记录两个系统生命周期官网链接。</p>
+<h2 id="正文">正文</h2>
+<ul>
+<li><a href="https://access.redhat.com/support/policy/updates/errata">Red Hat Enterprise Linux Life Cycle</a></li>
+<li><a href="https://wiki.centos.org/zh/About/Product">CentOS 产品规范</a></li>
+</ul>
+<h2 id="追更">追更</h2>
+<p>发布这篇稿子的时候，我也想不到自己会在两年后来更新，前两天刚把日常用的虚拟机，从 centos8 升级到了 centos8 stream，生产上怎么选择，我不好多说，本地环境还是追求最新的版本。</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">向天龙</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2022-02-10
+        <a href="https://github.com/tianlong-xiang/tianlong-xiang.github.io/commit/9357888a608b2b1afcd44e0e82ea745c359d0063" title="feat: 07-redhat and centos life cycle/index.md">(9357888)</a>
+        ，<a href="https://github.com/tianlong-xiang/tianlong-xiang.github.io/commits/even/content/post/2020/07-redhat%20and%20centos%20life%20cycle/index.md" target="_blank">更新历史</a>
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content">站点内容来源◎原创◎整理◎转载◎翻译☏如有侵权联系本人删除</span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/linux/">Linux</a>
+          <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/2020/08-linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BAjmeter%E5%8E%8B%E6%B5%8B%E7%8E%AF%E5%A2%83/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Linux搭建Jmeter压测环境</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/2020/06-%E4%B8%AD%E7%BE%8E%E8%B4%B8%E6%98%93%E6%88%98/">
+            <span class="next-text nav-default">中美贸易战</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:tianlong.xiang@foxmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/tianlong-xiang" class="iconfont icon-github" title="github"></a>
+  <a href="https://tianlong-xiang.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2019 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>向天龙</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdn.staticfile.org/slideout/1.0.1/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+<script src="https://cdn.staticfile.org/fancybox/3.1.20/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+
+
+<script type="text/javascript" src="/js/main.min.2b9bbe9eed93648028819ba74ae670cc584a09c570c35d54065db55b3eae5453.js"></script>
+
+
+
+
+
+
+<script src="/js/copy-code-button.js"></script>
+
+
+</body>
+</html>

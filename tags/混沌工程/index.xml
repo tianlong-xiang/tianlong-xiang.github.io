@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>混沌工程 on 假装不困</title>
+    <link>https://tianlong-xiang.github.io/tags/%E6%B7%B7%E6%B2%8C%E5%B7%A5%E7%A8%8B/</link>
+    <description>Recent content in 混沌工程 on 假装不困</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 28 Jul 2021 14:35:07 +0800</lastBuildDate><atom:link href="https://tianlong-xiang.github.io/tags/%E6%B7%B7%E6%B2%8C%E5%B7%A5%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>混沌工程</title>
+      <link>https://tianlong-xiang.github.io/post/2021/06-%E6%B7%B7%E6%B2%8C%E5%B7%A5%E7%A8%8B/</link>
+      <pubDate>Wed, 28 Jul 2021 14:35:07 +0800</pubDate>
+      
+      <guid>https://tianlong-xiang.github.io/post/2021/06-%E6%B7%B7%E6%B2%8C%E5%B7%A5%E7%A8%8B/</guid>
+      <description>&lt;p&gt;一种破坏系统的模式，进行系统稳定性测试&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

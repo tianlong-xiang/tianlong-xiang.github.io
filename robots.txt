@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://tianlong-xiang.github.io/sitemap.xml

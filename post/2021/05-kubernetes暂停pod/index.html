@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>kubernetes暂停pod - 假装不困</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="向天龙" /><meta name="description" content="Deployment控制器实现了Kubernetes集群中一个很重要的功能，Pod的水平拓展和收缩功能。这个功能是传统云时代平台所必备的能力" /><meta name="keywords" content="kubernetes" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.101.0 with theme even" />
+
+
+<link rel="canonical" href="https://tianlong-xiang.github.io/post/2021/05-kubernetes%E6%9A%82%E5%81%9Cpod/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.9565d9fbd315eac78f27813f63aa3b0da6f4c9fa2e387dffc57b95f19672b1c2.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.1.20/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/copy-code-button.css">
+<link rel="stylesheet" href="/css/even.css">
+
+
+<meta property="og:title" content="kubernetes暂停pod" />
+<meta property="og:description" content="Deployment控制器实现了Kubernetes集群中一个很重要的功能，Pod的水平拓展和收缩功能。这个功能是传统云时代平台所必备的能力" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tianlong-xiang.github.io/post/2021/05-kubernetes%E6%9A%82%E5%81%9Cpod/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-07-12T11:23:09+08:00" />
+<meta property="article:modified_time" content="2021-07-22T11:35:48+08:00" />
+
+<meta itemprop="name" content="kubernetes暂停pod">
+<meta itemprop="description" content="Deployment控制器实现了Kubernetes集群中一个很重要的功能，Pod的水平拓展和收缩功能。这个功能是传统云时代平台所必备的能力"><meta itemprop="datePublished" content="2021-07-12T11:23:09+08:00" />
+<meta itemprop="dateModified" content="2021-07-22T11:35:48+08:00" />
+<meta itemprop="wordCount" content="266">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="kubernetes暂停pod"/>
+<meta name="twitter:description" content="Deployment控制器实现了Kubernetes集群中一个很重要的功能，Pod的水平拓展和收缩功能。这个功能是传统云时代平台所必备的能力"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">假装不困</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签云</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">目录</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于我</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">假装不困</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签云</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">目录</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于我</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">kubernetes暂停pod</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-07-12 </span>
+        
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#参考链接">参考链接</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>Deployment控制器实现了Kubernetes集群中一个很重要的功能，Pod的水平拓展和收缩功能。这个功能是传统云时代平台所必备的能力。</p>
+<p>碰到一个业务场景，需要修改数据库中的数据，调整后重启Pod节点。但是在Pod运行过程中，一直在修改表字段，需要临时性的暂停应用对表的更新，调整数据后恢复Pod。</p>
+<p>除了暴力的删除Deployment，有没有其他的方式，实现类似暂停的效果？</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">kubectl scale --replicas<span class="o">=</span><span class="m">0</span> deployment/&lt;your-deployment&gt;
+</span></span></code></pre></div><p>在看到答案之前，很多人可能都没想到，看到答案后，会心一笑，脑子没有转弯，思路还停留在直接操作进程的时代，想着直接操作业务进程。</p>
+<h2 id="参考链接">参考链接</h2>
+<p><a href="https://stackoverflow.com/questions/54821044/how-to-stop-pause-a-pod-in-kubernetes">how to stop/pause a pod in kubernetes</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">向天龙</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2021-07-22
+        <a href="https://github.com/tianlong-xiang/tianlong-xiang.github.io/commit/7cb1bfb3d6cf05e8042e54b58576cd15bcdd9f11" title="feat: 作者信息、2021文章样式同步调整、展示更新时间">(7cb1bfb)</a>
+        ，<a href="https://github.com/tianlong-xiang/tianlong-xiang.github.io/commits/even/content/post/2021/05-kubernetes%e6%9a%82%e5%81%9cpod/index.md" target="_blank">更新历史</a>
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/2021/06-%E6%B7%B7%E6%B2%8C%E5%B7%A5%E7%A8%8B/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">混沌工程</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/2021/04-%E5%9F%BA%E9%87%91%E5%92%8C%E5%9B%BA%E6%94%B6%E7%90%86%E8%B4%A2/">
+            <span class="next-text nav-default">基金和固收理财</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:tianlong.xiang@foxmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/tianlong-xiang" class="iconfont icon-github" title="github"></a>
+  <a href="https://tianlong-xiang.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2019 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>向天龙</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdn.staticfile.org/slideout/1.0.1/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+<script src="https://cdn.staticfile.org/fancybox/3.1.20/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+
+
+<script type="text/javascript" src="/js/main.min.2b9bbe9eed93648028819ba74ae670cc584a09c570c35d54065db55b3eae5453.js"></script>
+
+
+
+
+
+
+<script src="/js/copy-code-button.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>自动集成系统切换 - 假装不困</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="向天龙" /><meta name="description" content="背景介绍 昨天更新博客时发现travis服务不可用，查看travis网页，发现进度卡在拉取源码的时候，灵光闪现想到了github之前推出的ac" /><meta name="keywords" content="向天龙, 金融IT, 港股交易" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.101.0 with theme even" />
+
+
+<link rel="canonical" href="https://tianlong-xiang.github.io/post/2020/02-%E8%87%AA%E5%8A%A8%E9%9B%86%E6%88%90%E7%B3%BB%E7%BB%9F%E5%88%87%E6%8D%A2/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.9565d9fbd315eac78f27813f63aa3b0da6f4c9fa2e387dffc57b95f19672b1c2.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.1.20/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/copy-code-button.css">
+<link rel="stylesheet" href="/css/even.css">
+
+
+<meta property="og:title" content="自动集成系统切换" />
+<meta property="og:description" content="背景介绍 昨天更新博客时发现travis服务不可用，查看travis网页，发现进度卡在拉取源码的时候，灵光闪现想到了github之前推出的ac" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tianlong-xiang.github.io/post/2020/02-%E8%87%AA%E5%8A%A8%E9%9B%86%E6%88%90%E7%B3%BB%E7%BB%9F%E5%88%87%E6%8D%A2/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2020-03-29T02:11:33+08:00" />
+<meta property="article:modified_time" content="2021-08-26T19:07:08+08:00" />
+
+<meta itemprop="name" content="自动集成系统切换">
+<meta itemprop="description" content="背景介绍 昨天更新博客时发现travis服务不可用，查看travis网页，发现进度卡在拉取源码的时候，灵光闪现想到了github之前推出的ac"><meta itemprop="datePublished" content="2020-03-29T02:11:33+08:00" />
+<meta itemprop="dateModified" content="2021-08-26T19:07:08+08:00" />
+<meta itemprop="wordCount" content="747">
+<meta itemprop="keywords" content="travis,github action,自动集成," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="自动集成系统切换"/>
+<meta name="twitter:description" content="背景介绍 昨天更新博客时发现travis服务不可用，查看travis网页，发现进度卡在拉取源码的时候，灵光闪现想到了github之前推出的ac"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">假装不困</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签云</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">目录</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于我</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">假装不困</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签云</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">目录</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于我</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">自动集成系统切换</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-03-29 </span>
+        <div class="post-category">
+            <a href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"> 未分类 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h4 id="背景介绍">背景介绍</h4>
+<p>昨天更新博客时发现travis服务不可用，查看travis网页，发现进度卡在拉取源码的时候，灵光闪现想到了github之前推出的action服务</p>
+<p>由于那会比较忙，同时也需要申请才能使用action，现在已经开始正式上线，周末闲来无事，尝试一个新玩具？</p>
+<p>官方资料大家自行进入网站查阅即可，本文就不做更多的转载了，如果之前用过kubernetes会觉得，action的yaml文件配置和kubernetes很像。</p>
+<p>关于的入门的教程，或者说是中文的介绍资料，推荐搜索<strong>阮一峰的博客</strong>，有两篇文章，第一篇是基础的语法介绍，第二篇是一个实际的案例。</p>
+<h4 id="正文">正文</h4>
+<p>需要的知识点</p>
+<ul>
+<li>github secrets</li>
+<li>action 语法</li>
+</ul>
+<p>核心的job使用现有的组件完成，推送到国内gitee使用command实现，command这部分比较粗暴，都是强制推送，沿用了使用travis的逻辑。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">github pages and gitee pages</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">on</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">push</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">hugo</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">jobs</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">deploy</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l">ubuntu-18.04</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">actions/checkout@v2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">submodules</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Setup Hugo</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">peaceiris/actions-hugo@v2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">hugo-version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;latest&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">extended</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Build Github and Gitee</span><span class="w"> </span><span class="c">## 单个step只能写一个run命令</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">hugo -b &#34;https://www.xiangtianlong.com/&#34; -d &#34;github_public&#34; &amp;&amp; hugo -b &#34;https://www.xiangtianlong.com/&#34; -d &#34;gitee_public&#34; &amp;&amp; ls</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Deploy Github</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">peaceiris/actions-gh-pages@v3</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">github_token</span><span class="p">:</span><span class="w"> </span><span class="l">${{ secrets.BLOG_TOKEN }}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">publish_dir</span><span class="p">:</span><span class="w"> </span><span class="l">./github_public</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">publish_branch</span><span class="p">:</span><span class="w"> </span><span class="l">master</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">cname</span><span class="p">:</span><span class="w"> </span><span class="l">xiangtianlong.com</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Deploy Gitee</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">cd ./gitee_public &amp;&amp; git init &amp;&amp; git config user.name &#34;TianlongXiang&#34; &amp;&amp; git config user.email &#34;tianlongxiang51@gmail.com&#34; &amp;&amp; git add . &amp;&amp; git commit -m &#34;Update TianlongXiang&#39;s Blog&#34; &amp;&amp; git push --force &#34;https://xiangtianlong:${{ secrets.GITEE_PASSWORD }}@gitee.com/xiangtianlong/xiangtianlong.git&#34; master:master   </span><span class="w">
+</span></span></span></code></pre></div><h4 id="后记">后记</h4>
+<p>从官方市场提供的action来看，目前支持的玩法挺多，构建docker镜像以后也能不再依赖dockerhub提供的服务</p>
+<p>查阅hugo的issue，发现使用github action自动部署git pages，最终发布的网页需要在master分支，如果是部署在其他分支，在setting界面，github会提示部署的网页存在语法问题</p>
+<p>实际上只是由于hugo的源文件放在了master分支，github当作jelly博客的源码进行检测，无法检查无法通过导致的报错</p>
+<p>解决方案也简单，hugo源码文件放到其他分支，静态文件发布在master分支</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">向天龙</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2021-08-26
+        <a href="https://github.com/tianlong-xiang/tianlong-xiang.github.io/commit/91d0d05251c8fd9279a4c64dbd0fee7080fe08f5" title="chore: 删除目录 其他，统一改为 未分类">(91d0d05)</a>
+        ，<a href="https://github.com/tianlong-xiang/tianlong-xiang.github.io/commits/even/content/post/2020/02-%e8%87%aa%e5%8a%a8%e9%9b%86%e6%88%90%e7%b3%bb%e7%bb%9f%e5%88%87%e6%8d%a2/index.md" target="_blank">更新历史</a>
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content">站点内容来源◎原创◎整理◎转载◎翻译☏如有侵权联系本人删除</span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/travis/">travis</a>
+          <a href="/tags/github-action/">github action</a>
+          <a href="/tags/%E8%87%AA%E5%8A%A8%E9%9B%86%E6%88%90/">自动集成</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/2020/03-%E5%8D%9A%E5%AE%A2ide%E7%8E%AF%E5%A2%83%E5%92%8C%E7%A2%8E%E7%A2%8E%E5%BF%B5/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">博客IDE环境和碎碎念</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/%E5%B2%81%E6%9C%88%E6%97%A2%E6%85%A2%E4%B8%94%E9%95%BF%E7%99%BD%E8%AF%B4%E4%BD%A0%E5%90%AC/06-%E6%9C%AA%E6%9D%A5%E7%9A%84%E5%A5%BD%E4%B8%AD%E5%9B%BD%E4%B8%80%E5%AE%9A%E6%98%AF%E6%9C%89%E5%A5%BD%E8%80%81%E5%A4%B4%E5%A5%BD%E8%80%81%E5%A4%AA%E5%A4%AA%E7%9A%84%E4%B8%AD%E5%9B%BD/">
+            <span class="next-text nav-default">未来的好中国一定是有好老头好老太太的中国</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:tianlong.xiang@foxmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/tianlong-xiang" class="iconfont icon-github" title="github"></a>
+  <a href="https://tianlong-xiang.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2019 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>向天龙</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdn.staticfile.org/slideout/1.0.1/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+<script src="https://cdn.staticfile.org/fancybox/3.1.20/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+
+
+<script type="text/javascript" src="/js/main.min.2b9bbe9eed93648028819ba74ae670cc584a09c570c35d54065db55b3eae5453.js"></script>
+
+
+
+
+
+
+<script src="/js/copy-code-button.js"></script>
+
+
+</body>
+</html>

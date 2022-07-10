@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>计算机 on 假装不困</title>
+    <link>https://tianlong-xiang.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/</link>
+    <description>Recent content in 计算机 on 假装不困</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 25 Feb 2022 01:23:39 +0800</lastBuildDate><atom:link href="https://tianlong-xiang.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>以为很简单的事情，增加一个代码复制按钮</title>
+      <link>https://tianlong-xiang.github.io/post/2022/001-%E4%BB%A5%E4%B8%BA%E5%BE%88%E7%AE%80%E5%8D%95%E7%9A%84%E4%BA%8B%E6%83%85%E5%A2%9E%E5%8A%A0%E4%B8%80%E4%B8%AA%E4%BB%A3%E7%A0%81%E5%A4%8D%E5%88%B6%E6%8C%89%E9%92%AE/</link>
+      <pubDate>Fri, 25 Feb 2022 01:23:39 +0800</pubDate>
+      
+      <guid>https://tianlong-xiang.github.io/post/2022/001-%E4%BB%A5%E4%B8%BA%E5%BE%88%E7%AE%80%E5%8D%95%E7%9A%84%E4%BA%8B%E6%83%85%E5%A2%9E%E5%8A%A0%E4%B8%80%E4%B8%AA%E4%BB%A3%E7%A0%81%E5%A4%8D%E5%88%B6%E6%8C%89%E9%92%AE/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;ouuan&lt;/code&gt; 弄了四个小时，看到这句话的时候，我还觉得搞笑了，怎么可能这么久？最后一看时间：三个小时。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;算是二零二二年开年的第一篇稿子，要搞的东西不复杂，就和标题说的一模一样（此时的我还很年轻），以为照抄 &lt;a href=&#34;https://ouuan.github.io/post/from-hexo-to-hugo/&#34;&gt;作业&lt;/a&gt; 就行，放到收藏夹里面，拖拖拉拉等了一个多月，终于想起来这个事情。&lt;/p&gt;
+&lt;p&gt;迁移到&lt;code&gt;hugo&lt;/code&gt;的时候一直觉得插件太少了，不能复制代码，导致很多笔记从印象笔记迁移到博客，复制代码的代码的操作就变得繁琐了，严重耽误我水博客的动力。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>混沌工程</title>
+      <link>https://tianlong-xiang.github.io/post/2021/06-%E6%B7%B7%E6%B2%8C%E5%B7%A5%E7%A8%8B/</link>
+      <pubDate>Wed, 28 Jul 2021 14:35:07 +0800</pubDate>
+      
+      <guid>https://tianlong-xiang.github.io/post/2021/06-%E6%B7%B7%E6%B2%8C%E5%B7%A5%E7%A8%8B/</guid>
+      <description>&lt;p&gt;一种破坏系统的模式，进行系统稳定性测试&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linux搭建Jmeter压测环境</title>
+      <link>https://tianlong-xiang.github.io/post/2020/08-linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BAjmeter%E5%8E%8B%E6%B5%8B%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Tue, 22 Dec 2020 10:12:50 +0800</pubDate>
+      
+      <guid>https://tianlong-xiang.github.io/post/2020/08-linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BAjmeter%E5%8E%8B%E6%B5%8B%E7%8E%AF%E5%A2%83/</guid>
+      <description>背景 众所周知本人对硬件有很浓厚的兴趣，凑巧测试组在用Jmeter做压力测试，发现性能上不去，作为好奇宝宝的我果断出击，试试公司的压测是怎么玩</description>
+    </item>
+    
+    <item>
+      <title>Redhat 和 Centos 生命周期</title>
+      <link>https://tianlong-xiang.github.io/post/2020/07-redhat-and-centos-life-cycle/</link>
+      <pubDate>Tue, 21 Jul 2020 20:02:35 +0800</pubDate>
+      
+      <guid>https://tianlong-xiang.github.io/post/2020/07-redhat-and-centos-life-cycle/</guid>
+      <description>前言 线上生产环境操作系统，目前国内的环境来说，redhat和centos为主流选择。前两年经历了redhat6的退役，特此记录两个系统生命周</description>
+    </item>
+    
+    <item>
+      <title>标准库容器的内存分配器：allocator</title>
+      <link>https://tianlong-xiang.github.io/post/2020/01-std-allocator-%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/</link>
+      <pubDate>Mon, 30 Dec 2019 13:26:19 +0800</pubDate>
+      
+      <guid>https://tianlong-xiang.github.io/post/2020/01-std-allocator-%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/</guid>
+      <description>前因 近期接触到了网络网络数据包的开发，需要频繁的申请和释放小块的内存，原本想着使用内存池，查看了几个现有的内存池，发现了这个： https://github.com/cacay/MemoryPool 看到接口的时</description>
+    </item>
+    
+  </channel>
+</rss>

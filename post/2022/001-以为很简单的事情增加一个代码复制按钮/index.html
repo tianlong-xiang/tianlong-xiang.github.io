@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>以为很简单的事情，增加一个代码复制按钮 - 假装不困</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="向天龙" /><meta name="description" content=" ouuan 弄了四个小时，看到这句话的时候，我还觉得搞笑了，怎么可能这么久？最后一看时间：三个小时。
+算是二零二二年开年的第一篇稿子，要搞的东西不复杂，就和标题说的一模一样（此时的我还很年轻），以为照抄 作业 就行，放到收藏夹里面，拖拖拉拉等了一个多月，终于想起来这个事情。
+迁移到hugo的时候一直觉得插件太少了，不能复制代码，导致很多笔记从印象笔记迁移到博客，复制代码的代码的操作就变得繁琐了，严重耽误我水博客的动力。
+" /><meta name="keywords" content="向天龙, 金融IT, 港股交易" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.101.0 with theme even" />
+
+
+<link rel="canonical" href="https://tianlong-xiang.github.io/post/2022/001-%E4%BB%A5%E4%B8%BA%E5%BE%88%E7%AE%80%E5%8D%95%E7%9A%84%E4%BA%8B%E6%83%85%E5%A2%9E%E5%8A%A0%E4%B8%80%E4%B8%AA%E4%BB%A3%E7%A0%81%E5%A4%8D%E5%88%B6%E6%8C%89%E9%92%AE/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.9565d9fbd315eac78f27813f63aa3b0da6f4c9fa2e387dffc57b95f19672b1c2.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.1.20/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/copy-code-button.css">
+<link rel="stylesheet" href="/css/even.css">
+
+
+<meta property="og:title" content="以为很简单的事情，增加一个代码复制按钮" />
+<meta property="og:description" content="
+ouuan 弄了四个小时，看到这句话的时候，我还觉得搞笑了，怎么可能这么久？最后一看时间：三个小时。
+
+算是二零二二年开年的第一篇稿子，要搞的东西不复杂，就和标题说的一模一样（此时的我还很年轻），以为照抄 作业 就行，放到收藏夹里面，拖拖拉拉等了一个多月，终于想起来这个事情。
+迁移到hugo的时候一直觉得插件太少了，不能复制代码，导致很多笔记从印象笔记迁移到博客，复制代码的代码的操作就变得繁琐了，严重耽误我水博客的动力。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tianlong-xiang.github.io/post/2022/001-%E4%BB%A5%E4%B8%BA%E5%BE%88%E7%AE%80%E5%8D%95%E7%9A%84%E4%BA%8B%E6%83%85%E5%A2%9E%E5%8A%A0%E4%B8%80%E4%B8%AA%E4%BB%A3%E7%A0%81%E5%A4%8D%E5%88%B6%E6%8C%89%E9%92%AE/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-02-25T01:23:39+08:00" />
+<meta property="article:modified_time" content="2022-03-27T03:50:20+08:00" />
+
+<meta itemprop="name" content="以为很简单的事情，增加一个代码复制按钮">
+<meta itemprop="description" content="
+ouuan 弄了四个小时，看到这句话的时候，我还觉得搞笑了，怎么可能这么久？最后一看时间：三个小时。
+
+算是二零二二年开年的第一篇稿子，要搞的东西不复杂，就和标题说的一模一样（此时的我还很年轻），以为照抄 作业 就行，放到收藏夹里面，拖拖拉拉等了一个多月，终于想起来这个事情。
+迁移到hugo的时候一直觉得插件太少了，不能复制代码，导致很多笔记从印象笔记迁移到博客，复制代码的代码的操作就变得繁琐了，严重耽误我水博客的动力。"><meta itemprop="datePublished" content="2022-02-25T01:23:39+08:00" />
+<meta itemprop="dateModified" content="2022-03-27T03:50:20+08:00" />
+<meta itemprop="wordCount" content="1302">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="以为很简单的事情，增加一个代码复制按钮"/>
+<meta name="twitter:description" content="
+ouuan 弄了四个小时，看到这句话的时候，我还觉得搞笑了，怎么可能这么久？最后一看时间：三个小时。
+
+算是二零二二年开年的第一篇稿子，要搞的东西不复杂，就和标题说的一模一样（此时的我还很年轻），以为照抄 作业 就行，放到收藏夹里面，拖拖拉拉等了一个多月，终于想起来这个事情。
+迁移到hugo的时候一直觉得插件太少了，不能复制代码，导致很多笔记从印象笔记迁移到博客，复制代码的代码的操作就变得繁琐了，严重耽误我水博客的动力。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">假装不困</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签云</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">目录</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于我</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">假装不困</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签云</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">目录</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于我</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">以为很简单的事情，增加一个代码复制按钮</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2022-02-25 </span>
+        <div class="post-category">
+            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"> 计算机 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#序章">序章</a>
+          <ul>
+            <li><a href="#新功能查看文章历史关联递交记录">新功能：查看文章历史、关联递交记录</a></li>
+            <li><a href="#样式调整">样式调整</a></li>
+          </ul>
+        </li>
+        <li><a href="#正文">正文</a></li>
+        <li><a href="#参考链接">参考链接</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <blockquote>
+<p><code>ouuan</code> 弄了四个小时，看到这句话的时候，我还觉得搞笑了，怎么可能这么久？最后一看时间：三个小时。</p>
+</blockquote>
+<p>算是二零二二年开年的第一篇稿子，要搞的东西不复杂，就和标题说的一模一样（此时的我还很年轻），以为照抄 <a href="https://ouuan.github.io/post/from-hexo-to-hugo/">作业</a> 就行，放到收藏夹里面，拖拖拉拉等了一个多月，终于想起来这个事情。</p>
+<p>迁移到<code>hugo</code>的时候一直觉得插件太少了，不能复制代码，导致很多笔记从印象笔记迁移到博客，复制代码的代码的操作就变得繁琐了，严重耽误我水博客的动力。</p>
+<h2 id="序章">序章</h2>
+<p>先仔细看看原作者的稿子，通读一遍然后翻翻作者介绍，我靠，碰到个大佬了，清华在读本科生，很早就接触到了计算机，诶，就是皮，先翻翻这个博客再说，完全不记得自己要做什么事情。顺带翻翻作者的<code>Github</code>仓库，这个修改后的<code>even</code>主题比现在的好看多了，新功能也多，搞起来，先把相关代码合并到过来。</p>
+<p><img src="2022-02-25-02-08-19.png" alt="1"> <img src="2022-02-25-02-08-40.png" alt="1"></p>
+<h3 id="新功能查看文章历史关联递交记录">新功能：查看文章历史、关联递交记录</h3>
+<p>效果还是不错的，拖到文章末尾就能体验。</p>
+<p>动手前也没太细看作者原仓库的历史记录，以为简单的合并下就好了，最后合并了一堆代码，中间还冲突和N次，无脑覆盖，都是前端和渲染的模板代码，以我要的为准。</p>
+<p>仓库地址：<a href="https://github.com/TianlongXiang/hugo-theme-even">https://github.com/TianlongXiang/hugo-theme-even</a></p>
+<p>中文的一个坑，<code>git</code>不调整这个参数，会导致生成的获取不到当前文章的<code>commit hash</code>，导致历史链接生成失败；生成文章完整历史的时候也需要改改自动集成脚本，记得拉取当前仓库全部的历史记录。</p>
+<ul>
+<li><a href="https://github.com/TianlongXiang/TianlongXiang.github.io/commit/0d860154de9b335ed88a57d62eedd4b6e3ccbeee">feat: 尝试拉取完整 github 仓库，用于动态更新文章最后一次改动记录</a></li>
+<li><a href="https://github.com/TianlongXiang/TianlongXiang.github.io/commit/1b5d719966737f16a8c67880370dc2722adea0b3">chore: 路径存在中文，hugo GitInfo 需要启用此设置</a></li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">name: Build Github
+</span></span><span class="line"><span class="cl">run: git config --global core.quotePath <span class="nb">false</span> <span class="o">&amp;&amp;</span> hugo -b <span class="s2">&#34;https://www.xiangtianlong.com/&#34;</span> -d <span class="s2">&#34;github_public&#34;</span> <span class="o">&amp;&amp;</span> ls
+</span></span></code></pre></div><h3 id="样式调整">样式调整</h3>
+<ul>
+<li>调整站点内容宽度，之前的设计适合移动端和电脑端，实际上也没人手机上看，我自己都是电脑上看</li>
+<li>目录栏支持自动伸缩</li>
+</ul>
+<h2 id="正文">正文</h2>
+<p>参考<code>ouuan</code>的代码记录看了半个多小时，愣是没太看懂怎么增加的复制按钮。</p>
+<blockquote>
+<p>时光穿梭，一月之后，又想到这事</p>
+</blockquote>
+<p>既然这个作业没看懂，换个作业抄，总归能抄明白。搜索出来的结果，还挺让人意外，<code>hugo</code>官方的论坛里面就有个帖子提到了如何增加复制按钮，跑过去一看，逻辑清晰。懵逼的事情来了，回到的站点一看<code>even</code>渲染生成的代码块样式和资料中的描述不同，这块就比较啰嗦了，简单记录下。</p>
+<p>由于基本不懂前端开发，不懂的地方就开着浏览器<code>审查元素</code>，对着代码分析、靠着右边的样式器信息，慢慢也分析懂了逻辑；<code>JavaScript</code>没看懂，控制台来点日志。不懂的时候很多，静下心，慢慢梳理拆分逻辑，总归能找到思路。</p>
+<ol>
+<li><code>pre</code>节点有多个，这里指的是单个代码块，主题自己渲染了一行号出来，导致复制按钮出来两个</li>
+<li>想要关点主题自带的代码高亮渲染，奈何这个主题设置不熟悉</li>
+<li><code>hugo</code>官网看资料，看了个半懂，知道有<code>markup</code>设置能控制代码高亮</li>
+<li>调整配置文件，一直不对劲，渲染出来和预期不同</li>
+<li>发现这堆设置<code>pygmentsOptions</code>，又继续翻资料，调整设置，先去掉行号</li>
+<li>配置自定义的<code>css</code>样式表，配置自定义的<code>js</code>脚本</li>
+<li>既然都搞了这么多事情，脑子突然想到最近看到一个配色图不错，改改按钮的样式：中国风天青色走起</li>
+</ol>
+<img class="special-img-class" style="width:20%" src="2022-02-25-02-01-22.png" />
+<img class="special-img-class" style="width:20%" src="2022-02-25-02-01-33.png" />
+<p>ouuan 弄了四个小时，看到这句话的时候，我还觉得搞笑了，怎么可能这么久？最后一看时间：三个小时。</p>
+<h2 id="参考链接">参考链接</h2>
+<ul>
+<li><a href="https://ouuan.github.io/post/from-hexo-to-hugo/">https://ouuan.github.io/post/from-hexo-to-hugo/</a></li>
+<li><a href="https://gohugobrasil.netlify.app/content-management/syntax-highlighting/">https://gohugobrasil.netlify.app/content-management/syntax-highlighting/</a></li>
+<li><a href="https://gohugo.io/getting-started/configuration-markup#highlight">https://gohugo.io/getting-started/configuration-markup#highlight</a></li>
+<li><a href="https://www.dannyguo.com/blog/how-to-add-copy-to-clipboard-buttons-to-code-blocks-in-hugo/">https://www.dannyguo.com/blog/how-to-add-copy-to-clipboard-buttons-to-code-blocks-in-hugo/</a></li>
+</ul>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">向天龙</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2022-03-27
+        <a href="https://github.com/tianlong-xiang/tianlong-xiang.github.io/commit/cebbbe3c8b523b0d6a30080c1c8d12864aaa0c9b" title="feat: 当你想搞钱的时候">(cebbbe3)</a>
+        ，<a href="https://github.com/tianlong-xiang/tianlong-xiang.github.io/commits/even/content/post/2022/001-%e4%bb%a5%e4%b8%ba%e5%be%88%e7%ae%80%e5%8d%95%e7%9a%84%e4%ba%8b%e6%83%85%ef%bc%8c%e5%a2%9e%e5%8a%a0%e4%b8%80%e4%b8%aa%e4%bb%a3%e7%a0%81%e5%a4%8d%e5%88%b6%e6%8c%89%e9%92%ae/index.md" target="_blank">更新历史</a>
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content">站点内容来源◎原创◎整理◎转载◎翻译☏如有侵权联系本人删除</span>
+  </p>
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/2022/002-%E5%BD%93%E4%BD%A0%E6%83%B3%E6%90%9E%E9%92%B1%E7%9A%84%E6%97%B6%E5%80%99/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">当你想搞钱的时候</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/2021/11-%E6%88%91%E4%BB%AC%E7%A9%B7%E6%9E%81%E4%B8%80%E7%94%9F%E8%BF%BD%E5%AF%BB%E7%9A%84%E6%98%AF%E4%BB%80%E4%B9%88/">
+            <span class="next-text nav-default">我们穷极一生追寻的是什么</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:tianlong.xiang@foxmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/tianlong-xiang" class="iconfont icon-github" title="github"></a>
+  <a href="https://tianlong-xiang.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2019 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>向天龙</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdn.staticfile.org/slideout/1.0.1/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+<script src="https://cdn.staticfile.org/fancybox/3.1.20/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+
+
+<script type="text/javascript" src="/js/main.min.2b9bbe9eed93648028819ba74ae670cc584a09c570c35d54065db55b3eae5453.js"></script>
+
+
+
+
+
+
+<script src="/js/copy-code-button.js"></script>
+
+
+</body>
+</html>

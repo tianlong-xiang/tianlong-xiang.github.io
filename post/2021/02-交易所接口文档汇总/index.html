@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>交易所接口文档汇总 - 假装不困</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="向天龙" /><meta name="description" content="前言 金融软件开发的第五个年头，打交道最多的就是各种交易所的接口文档，熟悉的也是港交所的文档，近期处理中华通业务，涉及到了部分中华通业务，顺手" /><meta name="keywords" content="向天龙, 金融IT, 港股交易" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.101.0 with theme even" />
+
+
+<link rel="canonical" href="https://tianlong-xiang.github.io/post/2021/02-%E4%BA%A4%E6%98%93%E6%89%80%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3%E6%B1%87%E6%80%BB/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.9565d9fbd315eac78f27813f63aa3b0da6f4c9fa2e387dffc57b95f19672b1c2.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.1.20/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/copy-code-button.css">
+<link rel="stylesheet" href="/css/even.css">
+
+
+<meta property="og:title" content="交易所接口文档汇总" />
+<meta property="og:description" content="前言 金融软件开发的第五个年头，打交道最多的就是各种交易所的接口文档，熟悉的也是港交所的文档，近期处理中华通业务，涉及到了部分中华通业务，顺手" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tianlong-xiang.github.io/post/2021/02-%E4%BA%A4%E6%98%93%E6%89%80%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3%E6%B1%87%E6%80%BB/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-01-27T14:35:21+08:00" />
+<meta property="article:modified_time" content="2021-07-22T11:35:48+08:00" />
+
+<meta itemprop="name" content="交易所接口文档汇总">
+<meta itemprop="description" content="前言 金融软件开发的第五个年头，打交道最多的就是各种交易所的接口文档，熟悉的也是港交所的文档，近期处理中华通业务，涉及到了部分中华通业务，顺手"><meta itemprop="datePublished" content="2021-01-27T14:35:21+08:00" />
+<meta itemprop="dateModified" content="2021-07-22T11:35:48+08:00" />
+<meta itemprop="wordCount" content="536">
+<meta itemprop="keywords" content="hkex,港交所,中华通,上交所,深交所,纳斯达克,接口文档," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="交易所接口文档汇总"/>
+<meta name="twitter:description" content="前言 金融软件开发的第五个年头，打交道最多的就是各种交易所的接口文档，熟悉的也是港交所的文档，近期处理中华通业务，涉及到了部分中华通业务，顺手"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">假装不困</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签云</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">目录</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于我</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">假装不困</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签云</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">目录</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于我</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">交易所接口文档汇总</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-01-27 </span>
+        <div class="post-category">
+            <a href="/categories/%E9%87%91%E8%9E%8D%E7%9F%A5%E8%AF%86%E5%BA%93/"> 金融知识库 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#前言">前言</a></li>
+        <li><a href="#港交所">港交所</a>
+          <ul>
+            <li><a href="#常用">常用</a></li>
+            <li><a href="#行情接口文档港股--中华通">行情接口文档：港股 + 中华通</a></li>
+            <li><a href="#报盘接口文档港股--中华通">报盘接口文档：港股 + 中华通</a></li>
+          </ul>
+        </li>
+        <li><a href="#上交所">上交所</a></li>
+        <li><a href="#深交所">深交所</a></li>
+        <li><a href="#纳斯达克">纳斯达克</a></li>
+        <li><a href="#收市价">收市价</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="前言">前言</h2>
+<p>金融软件开发的第五个年头，打交道最多的就是各种交易所的接口文档，熟悉的也是港交所的文档，近期处理中华通业务，涉及到了部分中华通业务，顺手查阅了深交所和上交所的资料</p>
+<h2 id="港交所">港交所</h2>
+<p><a href="https://www.hkex.com.hk/">官网链接</a></p>
+<h3 id="常用">常用</h3>
+<ul>
+<li><a href="https://www.hkex.com.hk/Mutual-Market/Stock-Connect/Reference-Materials/Trading-Hour,-Trading-and-Settlement-Calendar?sc_lang=zh-HK">交易時間，交易和結算日曆</a></li>
+<li><a href="https://sc.hkex.com.hk/TuniS/www.hkex.com.hk/Services/Trading/Securities/Overview/Trading-Mechanism?sc_lang=zh-CN">交易机制</a></li>
+<li><a href="https://www.hkex.com.hk/-/media/hkex-market/mutual-market/stock-connect/reference-materials/resources/glossary_c">中港金融詞彙對照表</a></li>
+</ul>
+<hr>
+<ul>
+<li><a href="2021-Calendar_pdf_c.pdf">滬港通及深港通交易日曆 PDF</a></li>
+<li><a href="2021-Calendar_csv_c.csv">滬港通及深港通交易日曆 CSV</a></li>
+<li><a href="glossary_c.pdf">中港金融詞彙對照表 PDF</a></li>
+</ul>
+<hr>
+<hr>
+<ul>
+<li><a href="https://sc.hkex.com.hk/TuniS/www.hkex.com.hk/chi/vcm/vcmtriggersecurity_c.aspx">市调机制冷静期触发记录</a></li>
+<li><a href="https://sc.hkex.com.hk/TuniS/www.hkex.com.hk/chi/services/trading/securities/securitieslists/ListOfSecurities_c.xlsx">证券名单：基本信息、证券分类</a></li>
+<li><a href="https://sc.hkex.com.hk/TuniS/www.hkex.com.hk/Services/Trading/Securities/Securities-Lists/Closing-Auction-Session-(CAS)-Securities?sc_lang=zh-CN">收市竞价交易时段证券</a></li>
+<li><a href="https://sc.hkex.com.hk/TuniS/www.hkex.com.hk/Services/Trading/Securities/Securities-Lists/Volatility-Control-Mechanism-(VCM)-Securities?sc_lang=zh-CN">市场波动调节机制（市调机制）证券</a></li>
+<li><a href="https://sc.hkex.com.hk/TuniS/www.hkex.com.hk/Services/Trading/Securities/Securities-Lists/Designated-Securities-Eligible-for-Short-Selling?sc_lang=zh-CN">可进行卖空的指定证券</a></li>
+</ul>
+<hr>
+<ul>
+<li><a href="ListOfSecurities_c.xlsx">证券名单：基本信息、证券分类 XLSX</a></li>
+</ul>
+<h3 id="行情接口文档港股--中华通">行情接口文档：港股 + 中华通</h3>
+<p><a href="https://www.hkex.com.hk/Services/Market-Data-Services/Infrastructure/Overview?sc_lang=en">行情接口文档汇总链接</a></p>
+<p>常见问题答疑、指引开发手册、历史行情接口文档可以通过搜索栏获取下载地址，搜索历史版本号</p>
+<ul>
+<li><a href="https://www.hkex.com.hk/Services/Market-Data-Services/Infrastructure/HKEX-Orion-Market-Data-Platform-Securities-Market-OMD-C?sc_lang=en">港股证券行情接口文档</a></li>
+<li><a href="https://www.hkex.com.hk/Mutual-Market/Stock-Connect/Reference-Materials/Technical-Documents/OMD_CC-Specifications?sc_lang=en">中华通行情接口文档</a></li>
+</ul>
+<hr>
+<ul>
+<li><a href="HKEX_OMDC_Binary_Interface_Specifications_v_1,-d-,32c.pdf">HKEX_OMDC_Binary_Interface_Specifications_v_1,-d-,32c.pdf</a></li>
+<li><a href="HKEX_OMDC_Developers_Guide_1_11.pdf">HKEX_OMDC_Developers_Guide_1_11.pdf</a></li>
+<li><a href="OMDC_Connectivity_Guide_Securities_Market-_Index_datafeed_(v2_2).pdf">OMDC_Connectivity_Guide_Securities_Market-<em>Index_datafeed</em>(v2_2).pdf</a></li>
+<li><a href="OMD_Interface_Specification_China_Connect_Securities-(v1-3).pdf">OMD_Interface_Specification_China_Connect_Securities-(v1-3).pdf</a></li>
+<li><a href="OMD_Connectivity_Guide_China_Connect_Securities.pdf">OMD_Connectivity_Guide_China_Connect_Securities.pdf</a></li>
+<li><a href="OMD_Developers_Guide_China_Connect_Securities.pdf">OMD_Developers_Guide_China_Connect_Securities.pdf</a></li>
+</ul>
+<h3 id="报盘接口文档港股--中华通">报盘接口文档：港股 + 中华通</h3>
+<p><a href="https://www.hkex.com.hk/Services/Trading/Securities/Infrastructure/Overview?sc_lang=en">报盘接口文档汇总链接</a></p>
+<ul>
+<li><a href="HKEX_OCG_FIX_Trading_Interface_Specifications_v2_2-(clean).pdf">港股FIX协议接口文档 PDF</a></li>
+<li><a href="HKEX_OCG_Binary_Trading_Interface_Specifications_v2_2-(clean).pdf">港股二级制协议接口文档 PDF</a></li>
+<li><a href="Reason_Text_List.xlsx">港股交易所错误代码清单 XLSX</a></li>
+</ul>
+<hr>
+<ul>
+<li><a href="HKEx_CCCG_FIX_Trading_Interface_Specifications_v1_3-(clean).pdf">中华通Fix协议接口文档 PDF</a></li>
+<li><a href="HKEx_CCCG_Binary_Trading_Interface_Specifications_v1_3-(clean).pdf">中华通二进制接口文档 PDF</a></li>
+</ul>
+<h2 id="上交所">上交所</h2>
+<p><a href="http://www.sse.com.cn/services/tradingservice/tradingtech/technical/data/">行情报盘接口文档</a></p>
+<p>报错接口文档在其他菜单中获取</p>
+<p><a href="SSE_IS111_ErrorCode_CV3.15.xlsx">报盘报错接口文档 XLSX</a></p>
+<h2 id="深交所">深交所</h2>
+<p><a href="http://www.szse.cn/marketServices/technicalservice/interface/">行情报盘接口文档</a></p>
+<p>深交所没有提供单独的报错信息说明，在报盘接口文档的第六章有附加说明</p>
+<p><a href="P020201229686784934466.pdf">深圳证券交易所Binary交易数据接口规范（Ver1.18）PDF</a></p>
+<h2 id="纳斯达克">纳斯达克</h2>
+<ul>
+<li><a href="https://www.nyse.com/markets/hours-calendars">假期安排</a></li>
+<li><a href="https://www.nasdaq.com/market-activity/ipos?tab=upcoming">新股上市信息</a></li>
+</ul>
+<h2 id="收市价">收市价</h2>
+<p><a href="http://eoddata.com/stocklist/NASDAQ.htm">全球市场收市价</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">向天龙</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2021-07-22
+        <a href="https://github.com/tianlong-xiang/tianlong-xiang.github.io/commit/7cb1bfb3d6cf05e8042e54b58576cd15bcdd9f11" title="feat: 作者信息、2021文章样式同步调整、展示更新时间">(7cb1bfb)</a>
+        ，<a href="https://github.com/tianlong-xiang/tianlong-xiang.github.io/commits/even/content/post/2021/02-%e4%ba%a4%e6%98%93%e6%89%80%e6%8e%a5%e5%8f%a3%e6%96%87%e6%a1%a3%e6%b1%87%e6%80%bb/index.md" target="_blank">更新历史</a>
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/hkex/">hkex</a>
+          <a href="/tags/%E6%B8%AF%E4%BA%A4%E6%89%80/">港交所</a>
+          <a href="/tags/%E4%B8%AD%E5%8D%8E%E9%80%9A/">中华通</a>
+          <a href="/tags/%E4%B8%8A%E4%BA%A4%E6%89%80/">上交所</a>
+          <a href="/tags/%E6%B7%B1%E4%BA%A4%E6%89%80/">深交所</a>
+          <a href="/tags/%E7%BA%B3%E6%96%AF%E8%BE%BE%E5%85%8B/">纳斯达克</a>
+          <a href="/tags/%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/">接口文档</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/2021/03-%E7%9B%88%E9%80%8F%E8%AF%81%E5%88%B8%E4%B8%AD%E6%96%AD%E4%BA%A4%E6%98%93/%E7%9B%88%E9%80%8F%E8%AF%81%E5%88%B8%E4%B8%AD%E6%96%AD%E4%BA%A4%E6%98%93/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">盈透证券：中断交易</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/2021/01-docker%E4%BA%8C%E4%B8%89%E4%BA%8B/">
+            <span class="next-text nav-default">docker二三事</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:tianlong.xiang@foxmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/tianlong-xiang" class="iconfont icon-github" title="github"></a>
+  <a href="https://tianlong-xiang.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2019 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>向天龙</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdn.staticfile.org/slideout/1.0.1/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+<script src="https://cdn.staticfile.org/fancybox/3.1.20/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+
+
+<script type="text/javascript" src="/js/main.min.2b9bbe9eed93648028819ba74ae670cc584a09c570c35d54065db55b3eae5453.js"></script>
+
+
+
+
+
+
+<script src="/js/copy-code-button.js"></script>
+
+
+</body>
+</html>
