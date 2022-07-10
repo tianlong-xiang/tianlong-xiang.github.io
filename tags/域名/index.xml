@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>域名 on 早睡早起</title>
+    <link>https://tianlong-xiang.github.io/tags/%E5%9F%9F%E5%90%8D/</link>
+    <description>Recent content in 域名 on 早睡早起</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 20 Jun 2020 10:36:27 +0800</lastBuildDate><atom:link href="https://tianlong-xiang.github.io/tags/%E5%9F%9F%E5%90%8D/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>网站加速和域名设置</title>
+      <link>https://tianlong-xiang.github.io/post/2020/04-%E7%BD%91%E7%AB%99%E5%8A%A0%E9%80%9F%E5%92%8C%E5%9F%9F%E5%90%8D%E8%AE%BE%E7%BD%AE/</link>
+      <pubDate>Sat, 20 Jun 2020 10:36:27 +0800</pubDate>
+      
+      <guid>https://tianlong-xiang.github.io/post/2020/04-%E7%BD%91%E7%AB%99%E5%8A%A0%E9%80%9F%E5%92%8C%E5%9F%9F%E5%90%8D%E8%AE%BE%E7%BD%AE/</guid>
+      <description>背景 网站托管在GitHub Pages，某些众所周知的原因，境内访问GitHub Pages有点慢。故而申请了个人域名，购买了国内云主机供应商的</description>
+    </item>
+    
+  </channel>
+</rss>

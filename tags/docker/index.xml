@@ -16,5 +16,14 @@
       <description>工作多年接触到的都是centos操作系统，如果是mac用户或者Ubuntu用户，暂时没法提供更多的帮助。 安装 由于不可知的神秘力量，国内安装d</description>
     </item>
     
+    <item>
+      <title>Linux搭建Jmeter压测环境</title>
+      <link>https://tianlong-xiang.github.io/post/2020/08-linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BAjmeter%E5%8E%8B%E6%B5%8B%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Tue, 22 Dec 2020 10:12:50 +0800</pubDate>
+      
+      <guid>https://tianlong-xiang.github.io/post/2020/08-linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BAjmeter%E5%8E%8B%E6%B5%8B%E7%8E%AF%E5%A2%83/</guid>
+      <description>背景 众所周知本人对硬件有很浓厚的兴趣，凑巧测试组在用Jmeter做压力测试，发现性能上不去，作为好奇宝宝的我果断出击，试试公司的压测是怎么玩</description>
+    </item>
+    
   </channel>
 </rss>

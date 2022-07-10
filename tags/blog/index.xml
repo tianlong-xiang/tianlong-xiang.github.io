@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>blog on 早睡早起</title>
+    <link>https://tianlong-xiang.github.io/tags/blog/</link>
+    <description>Recent content in blog on 早睡早起</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 25 Feb 2022 01:23:39 +0800</lastBuildDate><atom:link href="https://tianlong-xiang.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>以为很简单的事情，增加一个代码复制按钮</title>
+      <link>https://tianlong-xiang.github.io/post/2022/001-%E4%BB%A5%E4%B8%BA%E5%BE%88%E7%AE%80%E5%8D%95%E7%9A%84%E4%BA%8B%E6%83%85%E5%A2%9E%E5%8A%A0%E4%B8%80%E4%B8%AA%E4%BB%A3%E7%A0%81%E5%A4%8D%E5%88%B6%E6%8C%89%E9%92%AE/</link>
+      <pubDate>Fri, 25 Feb 2022 01:23:39 +0800</pubDate>
+      
+      <guid>https://tianlong-xiang.github.io/post/2022/001-%E4%BB%A5%E4%B8%BA%E5%BE%88%E7%AE%80%E5%8D%95%E7%9A%84%E4%BA%8B%E6%83%85%E5%A2%9E%E5%8A%A0%E4%B8%80%E4%B8%AA%E4%BB%A3%E7%A0%81%E5%A4%8D%E5%88%B6%E6%8C%89%E9%92%AE/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;ouuan&lt;/code&gt; 弄了四个小时，看到这句话的时候，我还觉得搞笑了，怎么可能这么久？最后一看时间：三个小时。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;算是二零二二年开年的第一篇稿子，要搞的东西不复杂，就和标题说的一模一样（此时的我还很年轻），以为照抄 &lt;a href=&#34;https://ouuan.github.io/post/from-hexo-to-hugo/&#34;&gt;作业&lt;/a&gt; 就行，放到收藏夹里面，拖拖拉拉等了一个多月，终于想起来这个事情。&lt;/p&gt;
+&lt;p&gt;迁移到&lt;code&gt;hugo&lt;/code&gt;的时候一直觉得插件太少了，不能复制代码，导致很多笔记从印象笔记迁移到博客，复制代码的代码的操作就变得繁琐了，严重耽误我水博客的动力。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>网站加速和域名设置</title>
+      <link>https://tianlong-xiang.github.io/post/2020/04-%E7%BD%91%E7%AB%99%E5%8A%A0%E9%80%9F%E5%92%8C%E5%9F%9F%E5%90%8D%E8%AE%BE%E7%BD%AE/</link>
+      <pubDate>Sat, 20 Jun 2020 10:36:27 +0800</pubDate>
+      
+      <guid>https://tianlong-xiang.github.io/post/2020/04-%E7%BD%91%E7%AB%99%E5%8A%A0%E9%80%9F%E5%92%8C%E5%9F%9F%E5%90%8D%E8%AE%BE%E7%BD%AE/</guid>
+      <description>背景 网站托管在GitHub Pages，某些众所周知的原因，境内访问GitHub Pages有点慢。故而申请了个人域名，购买了国内云主机供应商的</description>
+    </item>
+    
+    <item>
+      <title>博客IDE环境和碎碎念</title>
+      <link>https://tianlong-xiang.github.io/post/2020/03-%E5%8D%9A%E5%AE%A2ide%E7%8E%AF%E5%A2%83%E5%92%8C%E7%A2%8E%E7%A2%8E%E5%BF%B5/</link>
+      <pubDate>Tue, 31 Mar 2020 13:54:27 +0800</pubDate>
+      
+      <guid>https://tianlong-xiang.github.io/post/2020/03-%E5%8D%9A%E5%AE%A2ide%E7%8E%AF%E5%A2%83%E5%92%8C%E7%A2%8E%E7%A2%8E%E5%BF%B5/</guid>
+      <description>前言 Markdown 一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档 详细的Markdown语法本文不做额外赘述，推荐一本电子书，点击此处 市面</description>
+    </item>
+    
+  </channel>
+</rss>
