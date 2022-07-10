@@ -16,5 +16,14 @@
       <description>工作多年接触到的都是centos操作系统，如果是mac用户或者Ubuntu用户，暂时没法提供更多的帮助。 安装 由于不可知的神秘力量，国内安装d</description>
     </item>
     
+    <item>
+      <title>Redhat 和 Centos 生命周期</title>
+      <link>https://tianlong-xiang.github.io/post/2020/07-redhat-and-centos-life-cycle/</link>
+      <pubDate>Tue, 21 Jul 2020 20:02:35 +0800</pubDate>
+      
+      <guid>https://tianlong-xiang.github.io/post/2020/07-redhat-and-centos-life-cycle/</guid>
+      <description>前言 线上生产环境操作系统，目前国内的环境来说，redhat和centos为主流选择。前两年经历了redhat6的退役，特此记录两个系统生命周</description>
+    </item>
+    
   </channel>
 </rss>
