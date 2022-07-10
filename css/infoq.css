@@ -1,0 +1,271 @@
+/* 页面整体风格，主要为了限制宽度 */
+#mobile-panel {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    color: #333;
+    text-rendering: optimizelegibility;
+    -webkit-font-smoothing: antialiased;
+    text-size-adjust: 100%;
+    font: 400 1em/1.8 PingFang SC,Lantinghei SC,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,Helvetica,sans-serif;
+    /* margin: 0; */
+    position: relative;
+    /* flex: 1; */
+    width: 840px;
+    max-width: 840px;
+    padding: 15px 0 80px;
+    margin: centor;
+}
+
+#content > article > header > h1 {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    text-rendering: optimizelegibility;
+    -webkit-font-smoothing: antialiased;
+    text-size-adjust: 100%;
+    font: 400 1em/1.8 PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 23px;
+    line-height: 36px;
+    font-size: 36px;
+    font-weight: 600;
+    color: #303030;
+}
+
+/* infoq 稿子没看到 h2 直接就是 h3 */
+#content > article > div.post-content > h2, #content > article > div.post-content > h3 {
+    text-rendering: optimizelegibility;
+    text-size-adjust: 100%;
+    font: 400 1em/1.8 PingFang SC,Lantinghei SC,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,Helvetica,sans-serif;
+    font-family: Helvetica Neue,PingFang SC,Verdana,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+    margin: 0;
+    padding: 0;
+    line-height: 40px;
+    padding-top: 26px;
+    padding-bottom: 4px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #353535;
+    white-space: pre-wrap;
+}
+
+#content > article > div.post-content > h4 {
+    text-rendering: optimizelegibility;
+    text-size-adjust: 100%;
+    font: 400 1em/1.8 PingFang SC,Lantinghei SC,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,Helvetica,sans-serif;
+    font-family: Helvetica Neue,PingFang SC,Verdana,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+    margin: 0;
+    padding: 0;
+    line-height: 36px;
+    padding-top: 26px;
+    padding-bottom: 4px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #353535;
+    white-space: pre-wrap;
+}
+
+#content > article > div.post-content > h5, #content > article > div.post-content > h6 {
+    text-rendering: optimizelegibility;
+    text-size-adjust: 100%;
+    font: 400 1em/1.8 PingFang SC,Lantinghei SC,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,Helvetica,sans-serif;
+    font-family: Helvetica Neue,PingFang SC,Verdana,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+    margin: 0;
+    padding: 0;
+    line-height: 32px;
+    padding-top: 26px;
+    padding-bottom: 4px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #353535;
+    white-space: pre-wrap;
+}
+
+/* 首页文章标题 */
+#posts > article > header > h1 > a {
+    text-rendering: optimizelegibility;
+    -webkit-font-smoothing: antialiased;
+    text-size-adjust: 100%;
+    font: 400 1em/1.8 PingFang SC,Lantinghei SC,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,Helvetica,sans-serif;
+    color: #303030;
+}
+
+/* 首页文章标题 */
+#posts > article > header > h1 {
+    margin-bottom: 2px;
+}
+
+/* 首页阅读更多，单独修正字体 */
+#posts > article > div > div.read-more > a {
+    font-weight: 400;
+    font-size: 16px;
+}
+
+/* 首页内容预览 */
+#posts > article > div > div.post-summary > p {
+    text-rendering: optimizelegibility;
+    text-size-adjust: 100%;
+    font: 400 1em/1.8 PingFang SC,Lantinghei SC,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,Helvetica,sans-serif;
+    font-family: Helvetica Neue,PingFang SC,Verdana,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+    font-weight: 400;
+    color: #828a92;
+    margin: 0;
+    padding: 0;
+    white-space: pre-wrap;
+    word-break: break-all;
+    line-height: 1.875;
+    font-size: 16px;
+    min-height: 30px;
+}
+
+#content > article > div.post-content > p {
+    text-rendering: optimizelegibility;
+    text-size-adjust: 100%;
+    font: 400 1em/1.8 PingFang SC,Lantinghei SC,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,Helvetica,sans-serif;
+    color: #303030;
+    font-family: Helvetica Neue,PingFang SC,Verdana,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    white-space: pre-wrap;
+    word-break: break-all;
+    line-height: 1.875;
+    font-size: 16px;
+    min-height: 30px;
+    padding-left: 24px;
+    position: relative;
+}
+
+#content > article > div.post-content > blockquote {
+    /* all: initial; */
+    text-rendering: optimizelegibility;
+    text-size-adjust: 100%;
+    font: 400 1em/1.8 PingFang SC,Lantinghei SC,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,Helvetica,sans-serif;
+    line-height: 30px;
+    font-family: Helvetica Neue,PingFang SC,Verdana,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+    padding: 0;
+    position: relative;
+    font-weight: 400;
+    margin: 0;
+    border: 100px;
+    padding-right: 14px;
+    border-left: 3px solid #e3e5e8;
+    /* 控制和正文的间距 */
+    margin-left: 24px;
+    margin-bottom: 24px;
+    margin-top: 24px;
+    padding-left: 14px;
+    color: #828a92;
+}
+
+/* 首页引用预览 */
+#posts > article > div > div.post-summary > blockquote {
+        /* all: initial; */
+        text-rendering: optimizelegibility;
+        text-size-adjust: 100%;
+        font: 400 1em/1.8 PingFang SC,Lantinghei SC,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,Helvetica,sans-serif;
+        line-height: 30px;
+        font-family: Helvetica Neue,PingFang SC,Verdana,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -webkit-tap-highlight-color: rgba(255,255,255,0);
+        padding: 0;
+        position: relative;
+        font-weight: 400;
+        margin: 0;
+        border: 100px;
+        padding-right: 14px;
+        border-left: 3px solid #e3e5e8;
+        /* 控制和正文的间距 */
+        margin-bottom: 10px;
+        padding-left: 14px;
+        color: #828a92;
+}
+
+#content > article > div.post-content > blockquote > p,
+#posts > article > div > div.post-summary > blockquote > p {
+    all: initial;
+    text-rendering: optimizelegibility;
+    text-size-adjust: 100%;
+    font: 400 1em/1.8 PingFang SC,Lantinghei SC,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,Helvetica,sans-serif;
+    font-family: Helvetica Neue,PingFang SC,Verdana,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+    font-weight: 400;
+    color: #828a92;
+    margin: 0;
+    padding: 0;
+    white-space: pre-wrap;
+    word-break: break-all;
+    line-height: 1.875;
+    font-size: 16px;
+    min-height: 30px;
+}
+
+#content > article > div.post-content > a > img {
+    -webkit-text-size-adjust: 100%;
+    font-size: 16px;
+    font-family: source sans pro,helvetica neue,Arial,sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+    word-wrap: break-word;
+    background-color: transparent;
+    text-decoration: none;
+    color: #c05b4d;
+    word-break: break-all;
+    border: 0;
+    padding-left: 24px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+}
+
+#content > article > div.post-content > div {
+    margin-left: 24px;
+}
+
+#content > article > div.post-content > div > pre > code {
+    text-rendering: optimizelegibility;
+    text-size-adjust: 100%;
+    font: 400 1em/1.8 PingFang SC,Lantinghei SC,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,Helvetica,sans-serif;
+    color: #303030;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+    /* white-space: pre-wrap;
+    word-break: break-all; */
+    line-height: 1.875;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+    font-weight: 400;
+    background: #f1f3f5;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    font-family: Source Code Pro,Courier;
+}
+
+
+/* 列表清单 */
+#content > article > div.post-content > ol > li,#content > article > div.post-content > ul > li {
+    text-rendering: optimizelegibility;
+    text-size-adjust: 100%;
+    font: 400 1em/1.8 PingFang SC,Lantinghei SC,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,Helvetica,sans-serif;
+    line-height: 30px;
+    color: #303030;
+    font-family: Helvetica Neue,PingFang SC,Verdana,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+    margin: 0;
+    padding: 0;
+    /* list-style: none; */
+}
